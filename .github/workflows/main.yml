@@ -1,0 +1,22 @@
+# Defina o caminho para o ChromeDriver
+chrome_driver_path = "caminho/para/o/chromedriver"
+
+# Inicializando o navegador
+driver = webdriver.Chrome(executable_path=chrome_driver_path)
+
+# Acessar um site
+driver.get("https://instagram.com")
+
+# Encontrar o campo de login e senha
+username = driver.find_element(By.NAME, "username")
+password = driver.find_element(By.NAME, "password")
+
+# Inserir informações
+username.send_keys("douglas_espedito")
+password.send_keys("14112009Dodo")
+
+# Submeter o formulário
+password.send_keys(Keys.RETURN)
+
+# Fechar o navegador
+driver.quit()
